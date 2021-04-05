@@ -1,0 +1,24 @@
+﻿
+<!--Ienumerable of Bowlers type-->
+@model IndexViewModel  
+
+
+<div class="text-center">
+    <!--Displays the name of the team selected, or the word "Home" on the home page-->
+    <h1>@Model.Team</h1>
+</div>
+
+<!--Prints out each person's contact information-->
+@foreach (var x in Model.Bowlers)
+{
+<p>@x.BowlerFirstName @x.BowlerMiddleInit @x.BowlerLastName @x.BowlerAddress @x.BowlerCity @x.BowlerState @x.BowlerZip @x.BowlerPhoneNumber</p>
+}
+
+<!--Displays pagination -->
+<div page-info="@Model.PageNumberingInfo" 
+     page-url-teamname="@Model.Team"
+     page-classes-enabled="true" page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary">
+
+
+</div>
